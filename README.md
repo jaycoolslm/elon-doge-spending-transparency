@@ -4,7 +4,7 @@
 
 2. Create a Hedera Testnet account [here](https://bit.ly/3Z5pC3s)
 
-3. Create a .env file and add your ED21159 account id and private key
+3. `cp sample.env .env` and add your ED21159 account id and private key
 
 4. `npm install`
 
