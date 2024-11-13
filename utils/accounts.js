@@ -8,7 +8,6 @@ export const createAccount = async (memo) => {
     .setKey(privKey.publicKey)
     .setAccountMemo(memo)
     .setMaxAutomaticTokenAssociations(-1)
-    .setInitialBalance(5)
   // execute transaction
   const submitTx = await acctTx.execute(client)
   const rx = await submitTx.getReceipt(client)
@@ -29,7 +28,6 @@ export const createThresholdAccount = async (memo) => {
     .setKey(thresholdKey)
     .setAccountMemo(memo)
     .setMaxAutomaticTokenAssociations(-1)
-    .setInitialBalance(10)
   // execute transaction
   const submitTx = await acctTx.execute(client)
   const rx = await submitTx.getReceipt(client)

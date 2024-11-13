@@ -10,6 +10,7 @@ export const createUSDToken = async () => {
   const submitTx = await tokenTx.execute(client)
   const rx = await submitTx.getReceipt(client)
   const tokenId = rx.tokenId
+  console.log("Creating USD Token...")
   return tokenId
 }
 export const createInsanelyDumbSpendingVotingToken = async () => {
@@ -21,5 +22,6 @@ export const createInsanelyDumbSpendingVotingToken = async () => {
   const submitTx = await tokenTx.execute(client)
   const rx = await submitTx.getReceipt(client)
   const tokenId = rx.tokenId
+  console.log("Creating Insanely Dumb Spending Voting Token...")
   return tokenId
 }

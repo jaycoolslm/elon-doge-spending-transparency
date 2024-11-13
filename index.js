@@ -5,11 +5,13 @@ import { transferToken } from "./utils/transfers.js"
 
 const main = async () => {
   // create gov accounts
+  console.log('Creating Government accounts...')
   const departmentOfDefense = await createThresholdAccount("Department of Defense")
   const nationalInstituteOfAllergyAndInfectiousDiseases = await createThresholdAccount("National Institue of Allergy and Infectious Diseases")
   const receivingAccount = await createAccount("Receiving Account")
 
   // create public accounts
+  console.log("Creating the Public's accounts...")
   const alice = await createAccount("Alice")
   const bob = await createAccount("Bob")
 
@@ -29,8 +31,8 @@ const main = async () => {
     transferToken(insanelyDumbSpendingVotingToken, client.operatorAccountId, bob.accountId, 100_000)
   ])
 
-
   // create transactions and their accounts
+  console.log("Department of Defense purchasing a lobster tank...")
   const transactionReason_1 = "Purchase lobster tank"
   const transactionId_1 = await transferToken(
     usd,
@@ -42,6 +44,7 @@ const main = async () => {
   )
   const transactionVotingAccount_1 = await createAccount(transactionId_1.toString())
 
+  console.log("National Institue of Allergy and Infectious Diseases funding a study of HIV in 'transgender' monkeys...")
   const transactionReason_2 = "HIV study on transgender monkeys"
   const transactionId_2 = await transferToken(
     usd,
@@ -56,6 +59,7 @@ const main = async () => {
 
   // vote for dumb transactions
   // alice's vote
+  console.log("Alice casting her vote for the most insanely dubmb spending of her tax dollars...")
   await transferToken(
     insanelyDumbSpendingVotingToken,
     alice.accountId,
@@ -66,6 +70,7 @@ const main = async () => {
   )
 
   // bob's vote
+  console.log("Bob casting his vote for the most insanely dubmb spending of his tax dollars...")
   await transferToken(
     insanelyDumbSpendingVotingToken,
     bob.accountId,
@@ -74,6 +79,9 @@ const main = async () => {
     "Why do the military need a lobster tank?",
     bob.privKeys
   )
+
+
+  console.log(`Check out the dumb spending leaderboards here: https://hashscan.io/testnet/token${insanelyDumbSpendingVotingToken.toString()}`)
 
 }
 
