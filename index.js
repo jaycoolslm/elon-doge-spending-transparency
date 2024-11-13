@@ -75,13 +75,13 @@ const main = async () => {
     insanelyDumbSpendingVotingToken,
     bob.accountId,
     transactionVotingAccount_1.accountId,
-    25_000,
+    100_000,
     "Why do the military need a lobster tank?",
     bob.privKeys
   )
 
 
-  console.log(`Check out the dumb spending leaderboards here: https://hashscan.io/testnet/token${insanelyDumbSpendingVotingToken.toString()}`)
+  console.log(`Check out the dumb spending leaderboards here: https://hashscan.io/testnet/token/${insanelyDumbSpendingVotingToken.toString()}`)
 
 }
 

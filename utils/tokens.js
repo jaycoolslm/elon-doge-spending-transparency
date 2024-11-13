@@ -10,7 +10,7 @@ export const createUSDToken = async () => {
   const submitTx = await tokenTx.execute(client)
   const rx = await submitTx.getReceipt(client)
   const tokenId = rx.tokenId
-  console.log("Creating USD Token...")
+  console.log(`Created USD Token: ${tokenId.toString()}...`)
   return tokenId
 }
 export const createInsanelyDumbSpendingVotingToken = async () => {
@@ -18,10 +18,10 @@ export const createInsanelyDumbSpendingVotingToken = async () => {
     .setTokenName("Insanely Dumb Spending Voting Token")
     .setTokenSymbol("IDSVT")
     .setTreasuryAccountId(client.operatorAccountId)
-    .setInitialSupply(1_000_000)
+    .setInitialSupply(200_000)
   const submitTx = await tokenTx.execute(client)
   const rx = await submitTx.getReceipt(client)
   const tokenId = rx.tokenId
-  console.log("Creating Insanely Dumb Spending Voting Token...")
+  console.log(`Created Insanely Dumb Spending Voting Token Token: ${tokenId.toString()}...`)
   return tokenId
 }
